@@ -148,19 +148,43 @@ nav .active {
 }
 .search-field {
   grid-area: search;
+  position: relative;
   justify-content: flex-start !important;
 }
-.search-field input {
-  width: 100%;
-  margin: 0 1rem;
+.search-field label {
+  position: absolute;
+  z-index: -1;
+  left: 3.2rem;
+  font-size: 1rem;
 }
-.search-field input::placeholder {
-  color: var(--light-grey);
-  padding-left: 2rem;
+.search-field input {
+  width: 10%;
+  margin: 0 1rem;
+  padding: .3rem;
+  font-size: 1.2rem;
+  outline: none;
+  border: 0;
   background: url("images/arrow.svg");
   background-position: left;
   background-repeat: no-repeat;
   background-size: contain;
+}
+.search-field input:focus {
+  width: 100%;
+  border-bottom: 2px solid var(--secondary-color);
+  border-radius: 0;
+  margin-top: .5rem;
+  background-position: right;
+  transition: all 500ms ease;
+}
+input:focus+label {
+  left: 1rem;
+  top: .4rem;
+  font-size: .7rem;
+  transition: all 500ms ease;
+}
+.search-field input:focus::placeholder {
+  color: white;
 }
 .profile-bug {
   grid-area: profile;
@@ -201,13 +225,16 @@ nav .active {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 3rem -2rem 3rem;
-  border-bottom: 1px solid var(--dark-grey);
+  justify-content: space-between;
+  margin: 0 3rem;
 }
 .chart-collapse img {
   width: 2rem;
-  padding-bottom: -1rem;
+  margin: 0 .5em;
+}
+.chart-collapse hr {
+  width: 50%;
+  color: var(--dark-grey);
 }
 .main-area {
   display: grid;
