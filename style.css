@@ -69,13 +69,17 @@ h4 {
   margin-top: .6em;
   border-top: 3px groove var(--light-grey);
 }
-h6 {
+h6, h5 {
   color: var(--dark-grey);
   font-size: .8rem;
   text-transform: uppercase;
   font-weight: 600;
   display: inline-block;
   width: 25%;
+}
+h5 {
+  display: block;
+  width: auto;
 }
 ul {
   list-style-type: none;
@@ -253,12 +257,83 @@ nav .active {
   display: flex;
   flex-wrap: wrap;
 }
-.left-chart, .right-chart {
+.left-chart {
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem 3rem;
+}
+.right-chart {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+}
+.graph-circle1, .graph-circle2, .graph-circle3 {
+  width: 30%;
+  padding: 3rem;
+  display: inline-block;
+  text-align: center;
+}
+.graph-circle1 {
+  background-image: url('images/graph-circle1.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.graph-circle2 {
+  background-image: url('images/graph-circle2.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.graph-circle3 {
+  background-image: url('images/graph-circle3.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.right-chart-bar {
+  position: relative;
+  display: inline-block;
+  width: 1rem;
+  text-align: center;
+}
+.right-chart-bar .tooltiptext {
+  visibility: hidden;
+  font-size: 1rem;
+  width: 10rem;
+  background-color: var(--medium-grey);
+  color: #fff;
+  text-align: center;
+  padding: .5rem 0;
+  border-radius: .5rem;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5rem;
+  position: absolute;
+  z-index: 1;
+}
+.right-chart-bar .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--medium-grey) transparent transparent transparent;
+}
+.right-chart-bar:hover .tooltiptext {
+  visibility: visible;
+}
+.right-chart-side-numbers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 .chart-collapse {
   width: 100%;

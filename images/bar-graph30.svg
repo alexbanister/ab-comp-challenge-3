@@ -1,0 +1,31 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 11 93" style="enable-background:new 0 0 11 93;" xml:space="preserve">
+<style type="text/css">
+	.st0 {
+		fill: #FFFFFF;
+		fill-opacity: 0;
+		stroke: #106276;
+		stroke-width: 8;
+		stroke-miterlimit: 10;
+		stroke-dasharray: 100 200;
+		stroke-dashoffset: -70;
+		animation: rise 4s;
+	}
+	@keyframes rise {
+		from {
+			stroke-dashoffset: -95;
+		}
+		to {
+			stroke-dashoffset: -70;
+		}
+	.st1 {
+		fill: #FFFFFF;
+		fill-opacity: 0;
+		stroke: #3ee33e;
+		stroke-width: 5;
+		stroke-miterlimit: 10;
+	}
+</style>
+<line class="st1" x1="5.5" y1="0.5" x2="5.5" y2="92.5"/>
+<line class="st0" x1="5.5" y1="0.5" x2="5.5" y2="92.5"/>
+</svg>
