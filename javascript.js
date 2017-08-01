@@ -6,8 +6,8 @@ function toggleMenu() {
 }
 
 function toggleCharts() {
-  console.log('here');
   $('.left-chart').slideToggle('slow');
   $('.right-chart').slideToggle('slow');
+  $('.chart-button').slideToggle('slow');
   $('.flaticon-next').toggleClass( "icon-reverse" );
 }

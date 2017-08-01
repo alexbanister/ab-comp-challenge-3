@@ -1,11 +1,12 @@
 :root {
-  --debugging-color: #3ee33e;
-  --main-color: #106276;
-  --secondary-color: #A90641;
-  --bg-color: #FCFAD0;
-  --light-grey: #A1A194;
-  --medium-grey: #5B605F;
-  --dark-grey: #5B605F;
+  --main-color: #354052;
+  --secondary-color: #30394A;
+  --bg-color: #EDF2F6;
+  --light-grey: #FAFBFD;
+  --medium-grey: #F5F5F5;
+  --dark-grey: #6F7E95;
+  --bright-blue: #17A3F8;
+  --green: #48B9C2;
 }
 *:hover {
   transition: all 300ms ease;
@@ -21,7 +22,7 @@ body {
   height: 100vh;
   color: var(--dark-grey);
   display: grid;
-  grid-template-columns: 10rem auto;
+  grid-template-columns: 11rem auto;
   grid-template-rows: auto;
   grid-template-areas: "left top" "left bottom";
 }
@@ -32,7 +33,7 @@ body {
   display: none;
 }
 a, a:visited {
-  color: var(--secondary-color);
+  color: var(--bright-blue);
   text-decoration: none;
 }
 a:hover, a:active {
@@ -56,18 +57,19 @@ h1 {
 h2 {
   margin: 0;
   padding: 1rem;
-  background-color: var(--main-color);
+  background-color: var(--dark-grey);
   color: var(--bg-color);
   font-size: 1rem;
   text-transform: uppercase;
   border-radius: .25rem;
 }
 h4 {
-  color: var(--light-grey);
+  color: var(--dark-grey);
   text-transform: uppercase;
-  padding: 2em .6em .6em .6em;
+  font-size: .8rem;
+  padding: 1.5em .6em .6em .6em;
   margin-top: .6em;
-  border-top: 3px groove var(--light-grey);
+  border-top: 3px groove var(--dark-grey);
 }
 h6, h5 {
   color: var(--dark-grey);
@@ -83,6 +85,8 @@ h5 {
 }
 ul {
   list-style-type: none;
+  padding-bottom: .5rem;
+  margin: 0;
 }
 main {
   grid-area: bottom;
@@ -98,7 +102,7 @@ nav {
 }
 nav a {
   padding: .5rem;
-  padding-top: 0;
+  padding-top: 1rem;
   color: var(--dark-grey);
   text-transform: uppercase;
   border-bottom: 4px solid white;
@@ -107,7 +111,7 @@ nav a:hover {
   border-bottom: 4px solid var(--main-color);
 }
 nav .active {
-  border-bottom: 4px solid var(--secondary-color);
+  border-bottom: 4px solid var(--bright-blue);
   font-weight: 600;
 }
 .search-bar label {
@@ -186,6 +190,59 @@ nav .active {
   border: 1px solid var(--secondary-color);
   box-shadow: 2px 2px 4px #000;
 }
+.aside-nav form {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.aside-nav input[type='checkbox'] {
+  opacity: 0;
+  margin-left: -1rem;
+  cursor: pointer;
+}
+.aside-nav label {
+  cursor: pointer;
+  padding: .25rem;
+  padding-left: 1.7rem;
+  margin-left: .5rem;
+}
+#administration+label {
+  background-image: url('images/check-box-red-blank.svg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#administration:checked+label {
+  background-image: url('images/check-box-red.svg');
+}
+#design+label {
+  background-image: url('images/check-box-purple-blank.svg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#design:checked+label {
+  background-image: url('images/check-box-purple.svg');
+}
+#executive+label {
+  background-image: url('images/check-box-green-blank.svg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#executive:checked+label {
+  background-image: url('images/check-box-green.svg');
+}
+#hr+label {
+  background-image: url('images/check-box-yellow-blank.svg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#hr:checked+label {
+  background-image: url('images/check-box-yellow.svg');
+}
 .search-bar {
   width: 100%;
   display: grid;
@@ -243,53 +300,94 @@ nav .active {
   border-left: 1px solid var(--medium-grey);
 }
 .hamburger-bug:hover, .profile-bug:hover, .calendar-bug:hover, .apps-bug:hover {
-  background-color: var(--main-color);
+  background-color: var(--bright-blue);
   cursor: pointer;
 }
 .header-content {
+  width: 100%;
   padding: 3rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
 }
 .header-content p {
   font-size: .8rem;
 }
+.header-title {
+  display: inline-block;
+}
+.header-buttons {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.header-buttons i {
+  font-style: normal;
+  font-size: 1rem;
+  padding: .5rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--dark-grey);
+}
+.header-buttons i:hover {
+  background-color: var(--dark-grey);
+  color: var(--bg-color);
+}
 .charts {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "left-chart right-chart" "left-chart-button right-chart-button" "chart-collapse chart-collapse";
+  padding: 1rem 3rem;
+}
+.left-chart, .right-chart {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: .5rem;
 }
 .left-chart {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 3rem;
+  grid-area: left-chart;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-rows: auto;
+  grid-template-areas: "circle1 circle2 circle3";
 }
 .right-chart {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 3rem;
+  grid-area: right-chart;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
 }
 .graph-circle1, .graph-circle2, .graph-circle3 {
-  width: 30%;
-  padding: 3rem;
-  display: inline-block;
+  width: 100%;
+  height: auto;
+  font-size: .7rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.graph-circle1 h3, .graph-circle2 h3, .graph-circle3 h3 {
+  font-size: 1.5rem;
+  display: block;
 }
 .graph-circle1 {
+  grid-area: circle1;
   background-image: url('images/graph-circle1.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 .graph-circle2 {
+  grid-area: circle2;
   background-image: url('images/graph-circle2.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 .graph-circle3 {
+  grid-area: circle3;
   background-image: url('images/graph-circle3.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -298,33 +396,53 @@ nav .active {
 .right-chart-bar {
   position: relative;
   display: inline-block;
-  width: 1rem;
+  width: .9rem;
+  vertical-align: bottom;
   text-align: center;
+}
+.tooltiptext h3, .tooltiptext h4, .tooltiptext h5 {
+  font-size: .7rem;
+  border: 0;
+  display: inline;
+  font-weight: normal;
+  color: var(--bg-color);
+}
+.tooltiptext h3 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: .2rem;
+}
+.tooltiptext h4 {
+  color: var(--bright-blue);
+}
+.tooltiptext h5 {
+  color: var(--green);
 }
 .right-chart-bar .tooltiptext {
   visibility: hidden;
-  font-size: 1rem;
-  width: 10rem;
-  background-color: var(--medium-grey);
-  color: #fff;
+  font-size: .7rem;
+  width: 12rem;
+  background-color: var(--main-color);
+  color: var(--bg-color);
   text-align: center;
   padding: .5rem 0;
   border-radius: .5rem;
-  bottom: 100%;
+  bottom: 80%;
   left: 50%;
-  margin-left: -5rem;
+  margin-left: -6rem;
   position: absolute;
   z-index: 1;
+  box-shadow: 4px 4px 4px var(--secondary-color);
 }
 .right-chart-bar .tooltiptext::after {
   content: " ";
   position: absolute;
   top: 100%;
   left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
+  margin-left: -10px;
+  border-width: 10px;
   border-style: solid;
-  border-color: var(--medium-grey) transparent transparent transparent;
+  border-color: var(--main-color) transparent transparent transparent;
 }
 .right-chart-bar:hover .tooltiptext {
   visibility: visible;
@@ -333,14 +451,35 @@ nav .active {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+.chart-button {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.right-chart-button {
+  grid-area: right-chart-button;
+}
+.left-chart-button {
+  grid-area: left-chart-button;
+}
+.chart-button h6 {
+  border-radius: 1rem;
+  padding: .5rem;
+  width: auto;
+  text-transform: none;
+  border: 1px solid var(--main-color);
+  background-color: var(--light-grey);
 }
 .chart-collapse {
   width: 100%;
+  grid-area: chart-collapse;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 1rem 3rem;
+  margin: 1rem 0;
 }
 .flaticon-next {
   display: flex;
@@ -349,9 +488,11 @@ nav .active {
   font-size: 1rem;
   width: 2rem;
   height: 2rem;
-  color: var(--bg-color);
-  background-color: var(--medium-grey);
-  border: 1px solid var(--medium-grey);
+  margin: 0 .5rem;
+  line-height: .5rem;
+  color: var(--main-color);
+  background-color: var(--bg-color);
+  border: 1px solid var(--main-color);
   border-radius: 50%;
   transform: rotate(90deg);
   transition: all 300ms ease;
@@ -360,9 +501,9 @@ nav .active {
   cursor: pointer;
   z-index: 10;
   transform: scale(1.5) rotate(-90deg);
-  color: var(--medium-grey);
-  background-color: var(--bg-color);
-  border: 1px solid var(--medium-grey);
+  color: var(--bg-color);
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
   box-shadow: -2px 2px 4px #000;
 }
 .icon-reverse {
@@ -379,11 +520,25 @@ nav .active {
 .main-area {
   display: grid;
   align-self: stretch;
-  grid-template-columns: auto 25%;
+  grid-template-columns: auto 30%;
   grid-template-areas: "content sidebar";
   grid-column-gap: 3rem;
   padding: 0 3rem 2rem 3rem;
   grid-area: main;
+}
+.main-content button {
+  padding: .5rem;
+  margin: 0 .5rem;
+  border-radius: .5rem;
+  background-color: var(--medium-grey);
+  color: var(--main-color);
+  border: 1px solid var(--dark-grey);
+}
+.main-content button:hover {
+  cursor: pointer;
+  background-color: var(--main-color);
+  color: var(--medium-grey);
+  border: 1px solid var(--dark-grey);
 }
 .main-content {
   grid-area: content;
@@ -481,9 +636,13 @@ nav .active {
 }
 .side-widget h6 {
   width: 90%;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .side-widget i {
+  font-style: normal;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
   font-size: 1rem;
   margin-right: .5rem;
 }
@@ -494,11 +653,12 @@ nav .active {
 }
 .side-widget input {
   font-size: 1rem;
-  color: var(--medium-grey);
+  color: var(--dark-grey);
   line-height: 1.2rem;
   margin: 0;
   width: 75%;
   height: 2rem;
+  padding: 0 .5rem;
   border-top-left-radius: .3rem;
   border-bottom-left-radius: .3rem;
 }
@@ -509,7 +669,7 @@ nav .active {
   color: white;
   border-top-right-radius: .3rem;
   border-bottom-right-radius: .3rem;
-  background-color: var(--main-color);
+  background-color: var(--green);
   width: 25%;
   height: 2rem;
 }
@@ -525,6 +685,12 @@ nav .active {
 @media (max-width: 1000px) {
   html {
     font-size: .9em;
+  }
+  .graph-circle1, .graph-circle2, .graph-circle3 {
+    font-size: .6rem;
+  }
+  .graph-circle1 h3, .graph-circle2 h3, .graph-circle3 h3 {
+    font-size: 1.2rem;
   }
   .main-area {
     grid-template-columns: 100%;
@@ -612,6 +778,22 @@ nav .active {
   }
   h6 {
     width: 100%;
+  }
+  .left-chart, .right-chart {
+    width: 100%;
+    margin-top: .5rem;
+  }
+  .charts {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "left-chart" "left-chart-button" "right-chart" "right-chart-button" "chart-collapse";
+    padding: 1rem 3rem;
+  }
+  .graph-circle1, .graph-circle2, .graph-circle3 {
+    width: 20vw;
+    height: 20vw;
   }
   .main-content li {
     flex-wrap: wrap;
