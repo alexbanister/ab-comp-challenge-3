@@ -130,7 +130,7 @@ nav .active {
 }
 .search-bar input:focus {
   width: 100%;
-  border-bottom: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--bright-blue);
   border-radius: 0;
   margin-top: .5rem;
   transition: all 500ms ease;
@@ -329,6 +329,7 @@ nav .active {
   border: 1px solid var(--dark-grey);
 }
 .header-buttons i:hover {
+  cursor: pointer;
   background-color: var(--dark-grey);
   color: var(--bg-color);
 }
@@ -432,7 +433,7 @@ nav .active {
   margin-left: -6rem;
   position: absolute;
   z-index: 1;
-  box-shadow: 4px 4px 4px var(--secondary-color);
+  box-shadow: 4px 4px 4px var(--dark-grey);
 }
 .right-chart-bar .tooltiptext::after {
   content: " ";
@@ -659,6 +660,7 @@ nav .active {
   width: 75%;
   height: 2rem;
   padding: 0 .5rem;
+  border: 1px solid var(--dark-grey);
   border-top-left-radius: .3rem;
   border-bottom-left-radius: .3rem;
 }
