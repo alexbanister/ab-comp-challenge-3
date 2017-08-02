@@ -2,7 +2,6 @@
   --main-color: #354052;
   --secondary-color: #30394A;
   --bg-color: #EDF2F6;
-  --light-grey: #FAFBFD;
   --medium-grey: #F5F5F5;
   --dark-grey: #6F7E95;
   --bright-blue: #17A3F8;
@@ -155,7 +154,7 @@ nav .active {
   width: 50%;
   border-radius: 50%;
   margin: 1em;
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--bright-blue);
 }
 .aside-nav li {
   padding: .1em .6em;
@@ -472,7 +471,7 @@ nav .active {
   width: auto;
   text-transform: none;
   border: 1px solid var(--main-color);
-  background-color: var(--light-grey);
+  background-color: var(--bg-color);
 }
 .chart-collapse {
   width: 100%;
@@ -630,7 +629,7 @@ nav .active {
   align-items: center;
   margin-top: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 3px groove var(--light-grey);
+  border-bottom: 3px groove var(--bg-color);
 }
 .side-widget:last-child {
   border-bottom: 0;
@@ -806,6 +805,9 @@ nav .active {
     grid-template-rows: auto;
     grid-column-gap: 0;
     grid-template-areas: "social" "link" "widget" "upload";
+  }
+  .side-widget {
+    padding-bottom: 0;
   }
   .facebook, .twitter, .linkedin {
     width: 100%;
